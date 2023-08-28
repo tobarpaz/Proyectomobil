@@ -2,14 +2,24 @@
   <ion-toolbar>
     <ion-title>inicio</ion-title>
   </ion-toolbar>
+  <ion-button (click)="atrasSesion()" slot="end">
+    <ion-icon name="log-out-outline"></ion-icon>
+  </ion-button>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <h1 >Bienvenido Usuario</h1>
-
-      
     </ion-toolbar>
+    <div>
+      <ion-card>
+        <ion-card-content>
+          <p>Bienvenido Nombre Usuario</p>
+          <ion-button (click)="accesoCamara()">Acceder a la Cámara</ion-button>
+        </ion-card-content>
+      </ion-card>
+      <ion-button (click)="play()">Play</ion-button>
+    </div>
   </ion-header>
 </ion-content>

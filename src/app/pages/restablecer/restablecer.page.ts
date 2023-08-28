@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class RestablecerPage implements OnInit {
 
-  constructor(private router:Router) {}
+  constructor(private router:Router){
+  }
+
 
   ngOnInit() {
   }
 
-  restablecer(){
-    this.router.navigateByUrl('restablecer') 
-   }
+  restablecerContrasenia(){
+    console.log("Correo enviado")
+  }
 
 }
