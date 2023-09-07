@@ -15,8 +15,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
  onLogin(){
-/*     console.log("Usuario",this.usuario);
-    console.log("Contraseña",this.contrasena); */
 
 
     if (this.usuario == "") {
@@ -28,8 +26,8 @@ export class LoginPage implements OnInit {
       return;
     }
 
-    if (this.usuario == "admin" && this.contrasena == "123") {
-      //alert("Login correcto");
+    if (this.usuario == "pgy4121-001d" && this.contrasena == "pgy4121-001d") {
+    
       this.router.navigateByUrl('inicio');
     }else{
       alert("Usuario o contraseña incorrecta.")
@@ -40,4 +38,8 @@ export class LoginPage implements OnInit {
     
       this.router.navigateByUrl('restablecer') 
   }
+  registro(){
+    
+    this.router.navigateByUrl('registro') 
+}
 }

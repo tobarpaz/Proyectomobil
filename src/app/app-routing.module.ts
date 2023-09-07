@@ -22,7 +22,27 @@ const routes: Routes = [
   {
     path: 'restablecer',
     loadChildren: () => import('./pages/restablecer/restablecer.module').then( m => m.RestablecerPageModule)
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'escaneo',
+    loadChildren: () => import('./pages/escaneo/escaneo.module').then( m => m.EscaneoPageModule)
+  },
+  {
+    path: 'detalle-asig',
+    loadChildren: () => import('./pages/detalle-asig/detalle-asig.module').then( m => m.DetalleAsigPageModule)
+  },
+  {
+    path: 'registro-asig',
+    loadChildren: () => import('./pages/registro-asig/registro-asig.module').then( m => m.RegistroAsigPageModule)
+  },
+  {
+    path: 'detalle-escaneo',
+    loadChildren: () => import('./pages/detalle-escaneo/detalle-escaneo.module').then( m => m.DetalleEscaneoPageModule)
+  },
+
 ];
 
 @NgModule({

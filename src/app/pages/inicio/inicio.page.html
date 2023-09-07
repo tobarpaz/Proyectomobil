@@ -16,24 +16,25 @@
       <ion-card-subtitle>Duocuc</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
+   
         <div class="item">
         <ion-item>
           <ion-thumbnail slot="start">
             <img alt="" src="assets/img/qr.jpg" />
           </ion-thumbnail>
-          <ion-label>Cámara</ion-label>
+          <ion-button class="boton" expand="full" slot="start" (click)=" escaneo()"  shape="round">Escanear </ion-button>
         </ion-item>
   
         <ion-item>
           <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+            <img alt=""  src="assets/img/formulario-de-contacto.png" />
           </ion-thumbnail>
-          <ion-label>información alumno</ion-label>
+      
+          <ion-button class="boton" expand="full" slot="start" (click)=" registroasig()"  shape="round"> información asignatura alumno </ion-button>
         </ion-item>
       </div>
        
-      </ion-list>
+    
     </ion-card-content>
   </ion-card>
 

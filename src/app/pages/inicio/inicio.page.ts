@@ -17,17 +17,16 @@ export class InicioPage implements OnInit {
 
   constructor(private router:Router, private animationCtrl: AnimationController) { }
   
-  ngAfterViewInit() {
+  ionViewDidEnter() {
     this.animation = this.animationCtrl
-      .create()
-      .addElement(document.querySelectorAll("ion-button"))
-      .duration(3000)
+    .create()
+      .addElement(document.querySelectorAll("ion-card"))
+      .duration(1500)
       .iterations(Infinity)
-      .keyframes([
-        { offset: 0, width: '80px' },
-        { offset: 0.72, width: 'var(--width)' },
-        { offset: 1, width: '240px' },
-      ]);
+      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+      .fromTo('opacity', '1', '0.2');
+      
+    
   }
 
   play() {
@@ -40,9 +39,12 @@ export class InicioPage implements OnInit {
   atrasSesion(){
     this.router.navigateByUrl("/login");
   }
-
-  accesoCamara(){
-    
+  
+  escaneo(){
+    this.router.navigateByUrl("/escaneo")
+  }
+  registroasig(){
+    this.router.navigateByUrl("/registro-asig")
   }
 
 }
