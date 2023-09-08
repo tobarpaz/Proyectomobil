@@ -13,4 +13,8 @@ export class RegistroAsigPage implements OnInit {
   ngOnInit() {
   }
 
+  detalleasig(){
+    this.router.navigateByUrl("/detalle-asig")
+  }
+
 }
