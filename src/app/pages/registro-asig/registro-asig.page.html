@@ -1,13 +1,25 @@
 <ion-header [translucent]="true">
+  <ion-buttons>
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
   <ion-toolbar>
     <ion-title>registro-asig</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro-asig</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Registros Asignaturas</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    
+      <ion-item>
+        <ion-note slot="end">ASIGNATURA</ion-note>
+        <ion-button class="boton" expand="full" slot="start" (click)="detalleasig()"  shape="round"> información asignatura alumno </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

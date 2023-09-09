@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-escaneo',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EscaneoPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  detalleEscaneo(){
+    this.router.navigateByUrl('/detalle-escaneo');
+  }
 }

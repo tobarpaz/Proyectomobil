@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import{Inicio} from 'src/app/models/inicio';
 import { AnimationController, IonCard } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
 
@@ -15,26 +16,50 @@ export class InicioPage implements OnInit {
 
   private animation!: Animation;
 
+  inicioArray:Inicio[]=[];
+
+  loading:boolean= true;
+
   constructor(private router:Router, private animationCtrl: AnimationController) { }
-  
-  ionViewDidEnter() {
-    this.animation = this.animationCtrl
-    .create()
-      .addElement(document.querySelectorAll("ion-card"))
-      .duration(1500)
-      .iterations(Infinity)
-      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-      .fromTo('opacity', '1', '0.2');
-      
+  ngOnInit(){ 
+   this.cargarInicio();
+   setTimeout(()=>{this.loading=false},3000)
     
   }
+  
+  ionViewWillEnter() {
+    const refs = document.querySelectorAll("ion-content");
 
-  play() {
-    this.animation.play();
+    if (refs) {
+      const animation: Animation = this.animationCtrl.create()
+      .addElement(refs)
+      .duration(1000)
+      .iterations(1)
+      .fromTo('opacity', '0', '1')
+      .fromTo('transform', 'translateX(-100%)', 'translateX(0)');
+      animation.play();
+    }
   }
 
-  ngOnInit() {
+ cargarInicio(){
+  this.inicioArray.push(
+  { id:1,
+    icono:"scan-circle-outline",
+    nombre:"Escanear",
+    url:"/escaneo"
+
+
+  },
+  {
+    id:2,
+    icono:"library-outline",
+    nombre:"Asignatura Alumno",
+    url:"/registro-asig"
   }
+  )
+ }
+
+ 
 
   atrasSesion(){
     this.router.navigateByUrl("/login");
