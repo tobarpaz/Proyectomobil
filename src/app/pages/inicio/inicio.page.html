@@ -15,6 +15,7 @@
       <ion-card-title class="text">Bienvenido Usuario</ion-card-title>
       <ion-card-subtitle>Duocuc</ion-card-subtitle>
     </ion-card-header>
+<<<<<<< HEAD
    
       
       <ng-container *ngIf="!loading"> 
@@ -42,6 +43,26 @@
         </ng-container>
         </ion-card>
       </ng-container>
+=======
+    <ion-card-content>
+      
+        <div class="item">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="" src="assets/img/qr.jpg" />
+          </ion-thumbnail>
+          <ion-button class="boton" expand="full" slot="start" (click)=" escaneo()"  shape="round">Escanear </ion-button>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt=""  src="assets/img/formulario-de-contacto.png" />
+          </ion-thumbnail>
+          <ion-button class="boton" expand="full" slot="start" (click)=" registroasig()"  shape="round"> información asignatura alumno </ion-button>
+        </ion-item>
+      </div>
+
+>>>>>>> 1fe7db5c47c0c052ac3d5378ce9dcc97d487aa77
     
       <ng-container *ngIf="loading">
         <div class="box-skeleton" *ngFor="let i of [1,2]">

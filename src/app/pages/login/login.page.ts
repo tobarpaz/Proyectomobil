@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +11,18 @@ export class LoginPage implements OnInit {
   usuario:string = "";
   contrasena:string = "";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private helper:HelperService) { }
 
   ngOnInit() {
   }
- onLogin(){
-
+onLogin(){
 
     if (this.usuario == "") {
-      alert("Debe ingresar un usuario");
+      this.helper.showAlert("Debes ingresar un usuario","Error");
       return;
     }
     if (this.contrasena == "") {
-      alert("Debe ingresar una contraseña");
+      this.helper.showAlert("Debes ingresar una contraseña","Error");
       return;
     }
 
@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
     
       this.router.navigateByUrl('inicio');
     }else{
-      alert("Usuario o contraseña incorrecta.")
+      this.helper.showAlert("Correo o contraseña incorrecto.","Error");
     }
   }
 
